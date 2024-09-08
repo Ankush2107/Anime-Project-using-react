@@ -16,11 +16,15 @@ function Gallery() {
 
     useEffect(() => {
         getAnimePictures(id);
-    }, []);
+    }, [id]);
   return (
     <GalleryStyled>
       <div className='back'>
-        <Link to="/">back</Link>
+        
+        <Link to="/">
+          <i class="fa-solid fa-arrow-left"></i>
+          Back to home
+        </Link>
       </div>
       <div className='big-image'>
         <img src={pictures[index]?.jpg.image_url} alt=''/>
@@ -63,6 +67,9 @@ const GalleryStyled = styled.div`
         font-weight: 600;
         text-decoration: none;
         color: #eb5757;
+        display: flex;
+        align-item: center;
+        gap: .5rem;
     }
   }
   .big-image {
